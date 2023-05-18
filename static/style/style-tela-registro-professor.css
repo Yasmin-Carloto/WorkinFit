@@ -61,6 +61,69 @@ body {
     justify-content: space-around;
 }
 
+#aviso_deletar{
+    display: none;
+    height: 40vh;
+    width: 35vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    background-color: #3D3D3D;
+    border-radius: 20px;
+
+    
+}
+#aviso_deletar img{
+    width: 6vw;
+}
+
+#aviso_deletar p{
+    width: 30vw;
+    top: -15px;
+    text-align: center;
+    font-family: 'Montserrat-bold';
+    color: #FFFFFF;
+}
+
+#aviso_deletar #alerta_botoes{
+    display: flex;
+    width: 15vw;
+    justify-content: space-between;
+}
+
+#alerta_botoes #voltar{
+    text-align: center;
+    height: 4vh;
+    width: 10vh;
+    border-radius: 7px;
+    border: 0px;
+    font-family: 'Montserrat-bold';
+    font-weight: 900;
+    background-color: #151515;
+    color: rgba(13, 255, 94, 1);
+}
+#alerta_botoes #deletar{
+    text-align: center;
+    height: 4vh;
+    width:10vh;
+    border-radius: 7px;
+    border: 0px;
+    font-family: 'Montserrat-bold';
+    font-weight: 900;
+    background-color: #151515;
+    color: rgba(255, 13, 13, 1);
+}
+#back{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
 #novoCadastro h3{
     margin-top: 2vh;
     margin-bottom: 3vh;

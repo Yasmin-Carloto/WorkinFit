@@ -7,6 +7,7 @@
     <title>Tela de Registros</title>
     <link href="/static/style/style-tela-registro-professor.css" rel="stylesheet">
     <link href="./style/reset.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
     <div id="tela-geral">
@@ -31,7 +32,25 @@
                 </div>
             </div>
     </div>
-
+    <div id="back"></div>
+    <div id="aviso_deletar">
+        <div id="alerta_imagem">
+            <img src="static/style/imagens/warning.png" alt="imagem vermelha com símbolo de alerta">
+        </div>
+        <div id="alerta_texto">
+            <p>
+                Você realmente deseja deletar o cadastro do (a) professor (a)
+            </p>
+        </div>
+        <div id="alerta_botoes">
+            <button id="voltar">
+                Voltar
+            </button>
+            <button id="deletar">
+                Deletar
+            </button>
+        </div>
+    </div>
     <script src="./static/scripts/script-tela-registro-professor.js"></script>
 </body>
 </html>
