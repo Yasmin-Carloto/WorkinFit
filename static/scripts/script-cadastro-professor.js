@@ -4,7 +4,7 @@ select.addEventListener("change", function(){
 
     switch(value){
       case 'Aluno': 
-        window.location.href = "";
+        window.location.href = "telaDeCadastroAluno.html";
         break;
       case 'Professor': 
         alert("Você já está no cadastro do professor.")
