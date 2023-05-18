@@ -85,6 +85,8 @@ body {
 }
 
 #selecao{
+    font-family: Montserrat-bold;
+    color: #FFFFFF;
     top: 5vh;
     width: 18vw;
     height: 5vh;
