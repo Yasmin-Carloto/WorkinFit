@@ -28,7 +28,7 @@ form.addEventListener("submit", function(e){
 
     const formData = new FormData(form)
     
-    fetch('http://httpbin.org/post', {
+    fetch('https://workinfit-api-production.up.railway.app/professor/novo', {
       method: "POST",
       body: formData, 
     })

@@ -1,17 +1,5 @@
 select.addEventListener("change", function(){
-    var select = document.getElementById("select");
-    var value = select.value;
-
-    switch(value){
-      case 'Aluno': 
-        window.location.href = "telaRegistro-aluno.html";
-        break;
-      case 'Professor': 
-        alert("Você já está no cadastro do professor.")
-        break;
-      default: 
-        console.log("Inválido");
-    }
+  mudancaDeTela()
 })
 
 const registro = document.getElementById('registro')
@@ -26,31 +14,61 @@ fetch('https://workinfit-api-production.up.railway.app/professor/buscar')
     console.log(lista)
 
     lista.forEach(element => {
-      const novoRegistro = registro.cloneNode(true);
-      novoRegistro.style.display = "flex"
-      novoRegistro.setAttribute("id", "registro")
-      const span = document.createElement('span')
-      span.innerHTML = element.matricula
-      span.style.display = "none"
-      novoRegistro.appendChild(span)
-      let label = novoRegistro.getElementsByClassName('professor')[0]
-      label.innerHTML = element.nome
-      containerRegistros.appendChild(novoRegistro)
+      criarNovosRegistros(element)
     });
 
-    const listaRegistro =  document.getElementsByClassName('registro-classe')
-    const edit = document.getElementsByClassName('edit')
-
-    for(let i = 0; i<edit.length; i++){
-      edit[i].addEventListener("click", function(){
-        mudarPagina(listaRegistro[i].getElementsByTagName('span')[0].innerText)
-      })
-    }
+    adicionarMatricula()
     
   })
 
 function mudarPagina(matricula){
   console.log(matricula)
   window.location.href = `paginaDeEdiçãoDeCadastro-professor.html?matricula=${matricula}`
-
 }
+
+function mudancaDeTela(){
+  var select = document.getElementById("select");
+  var value = select.value;
+  switch(value){
+    case 'Aluno': 
+      window.location.href = "telaRegistro-aluno.html";
+      break;
+    case 'Professor': 
+      alert("Você já está no cadastro do professor.")
+      break;
+    default: 
+      console.log("Inválido");
+  }
+}
+
+function criarNovosRegistros(element){
+  const novoRegistro = registro.cloneNode(true);
+  novoRegistro.style.display = "flex"
+  novoRegistro.setAttribute("id", "registro")
+
+  const span = adicionandoSpan(element)
+
+  novoRegistro.appendChild(span)
+  let label = novoRegistro.getElementsByClassName('professor')[0]
+  label.innerHTML = element.nome
+  containerRegistros.appendChild(novoRegistro)
+}
+
+function adicionandoSpan(element){
+  const span = document.createElement('span')
+  span.innerHTML = element.matricula
+  span.style.display = "none"
+  return span
+}
+
+function adicionarMatricula(){
+  const listaRegistro =  document.getElementsByClassName('registro-classe')
+  const edit = document.getElementsByClassName('edit')
+
+  for(let i = 0; i<edit.length; i++){
+    edit[i].addEventListener("click", function(){
+      mudarPagina(listaRegistro[i].getElementsByTagName('span')[0].innerText)
+    })
+  }
+}
+
