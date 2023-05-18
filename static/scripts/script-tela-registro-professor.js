@@ -29,9 +29,9 @@ $(".delete").click((registro) => {
   
   $("#deletar").off().click(() => {
       const matricula = tagRegistro.getElementsByTagName('span')[0].innerText
-      deletarMatricula(matricula)
       esconderCofirmação()
-      window.location.reload()
+
+      deletarMatricula(matricula)
   })
 
 })
@@ -101,6 +101,9 @@ function mostrarConfirmação(){
 
 function esconderCofirmação(){
   $("#aviso_deletar").hide()
+  $("#back").attr("style", "display: none;")
+
+  
 }
 
 function deletarMatricula(matricula){
@@ -109,6 +112,7 @@ function deletarMatricula(matricula){
     fetch(baseUrl+matricula, {
       method : "DELETE"
     })
-    .then(response => {console.log(response)})
+      // 
+    .then(response => {window.location.reload()})
     
 }
