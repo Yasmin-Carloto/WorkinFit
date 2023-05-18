@@ -1,12 +1,11 @@
 @font-face {
     font-family: 'Montserrat-light';
-    src: url(/montserrat/static/Montserrat-Light.ttf);
+    src: url(./montserrat/static/Montserrat-Light.ttf);
 }
 @font-face {
     font-family: 'Montserrat-bold';
-    src: url(/montserrat/static/Montserrat-Bold.ttf);
+    src: url(./montserrat/static/Montserrat-Bold.ttf);
 }
-
 body {
     background: #545353;
     margin: 0;
