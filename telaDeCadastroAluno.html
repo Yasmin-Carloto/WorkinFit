@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Aluno - Dados Cadastrais</title>
+    <link href="/static/style/style-aluno-cadastros.css" rel="stylesheet">
+    <link href="/static/style/reset.css" rel="stylesheet">
+
+</head>
+<body>
+    <div id="tela-geral">
+        <div id="boas-vindas">
+            <h1 id="texto-boas-vindas">Bem - vindos à nossa página de cadastro.</h1>
+        </div>
+        <div id="principal">
+            <div id="selecao">
+                <select class="opcoes" id="select">
+                    <option class="opcao" disabled class="opcao" value="Selecione Usuário">Selecione Usuário</option>
+                    <option class="opcao" selected disabled value="Aluno">Usuário Aluno</option>
+                    <option class="opcao"  value="Professor">Usuário Professor</option>
+                </select>
+            </div>
+
+            <form id="form-container">
+                <div class="coluna">
+                    <input type="text" class="entrada" placeholder="nome *" id="nome" name="nome">
+                    <input type="tel" class="entrada" placeholder="telefone *" id="telefone" name="telefone">
+                    <input type="email" class="entrada" placeholder="email *" id="email" name="email">
+                    <input type="number" class="entrada" placeholder="CPF *" id="cpf" name="cpf">
+                    <input type="text" class="entrada" placeholder="CEP *" id="cep" name="cep">
+                </div> 
+                <div class="coluna">
+                    <input type="text" class="entrada" placeholder="rua *" id="rua" name="rua">
+                    <input type="text" class="entrada" placeholder="bairro *" id="bairro" name="bairro">
+                    <input type="text" class="entrada" placeholder="complemento" id="complemento" name="complemento">
+                    <input type="password" class="entrada" placeholder="senha *" id="senha" name="senha">
+                    <input type="password" class="entrada" placeholder="confirmação *" id="confirmacao" name="confirmacao">
+                </div>
+
+                <input type="submit" value="enviar" id="enviar">
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/scripts/script-cadastro-aluno.js"></script>
+</body>
+</html>

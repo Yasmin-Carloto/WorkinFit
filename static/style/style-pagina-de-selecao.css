@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'Montserrat-light';
+    src: url(/static/style/montserrat/static/Montserrat-Light.ttf);
+}
+@font-face {
+    font-family: 'Montserrat-bold';
+    src: url(/static/style/montserrat/static/Montserrat-Bold.ttf);
+}
+
+body {
+    background: #545353;
+    margin: 0;
+}
+#tela-geral {
+    position: relative;
+    display: flex;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 7px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 25px 25px 25px 25px;
+}
+
+#boas-vindas {
+    position: relative;
+    width: 25vw;
+    height: 80vh;
+    background: #0DFF5E;
+    border-radius: 25px 0px 0px 25px;
+}
+
+#texto-boas-vindas {
+    font-family: 'Montserrat-bold';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;    
+    line-height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    width: 20vw;
+    height: 80vh;
+    margin-left: 2vw;
+}
+
+#principal {
+    position: relative;
+    width: 55vw;
+    height: 80vh;
+    background: #262626;
+    border-radius: 0px 25px 25px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.opcoes {
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background-color: #1D1C1C;
+    height: 5vh;
+    width: 20vw;
+    margin-top: 8vh;
+    padding-left: 1vw;
+    border-radius: 5vw;
+    align-items: center;
+    display: flex;
+    border: none;
+    font-family: 'Montserrat-light';
+    font-weight: 500;
+    color: #0DFF5E;
+}
+
+.opcoes select {
+    -webkit-background-clip:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline: 0;
+}
+
+#select.opcoes{
+    margin-top:0;
+}
+
+#selecao{
+    position: relative;
+    left: 30%;
+    display: flex;
+}
+
+ :hover{
+    cursor:url(https://cdn.custom-cursor.com/db/cursor/32/Cursor_Classic_Black.png), text;
+ }
+
+
+
+/* #triangulo-opcoes {
+    width: 0; 
+    height: 0; 
+    border-left: 0.8vw solid transparent;
+    border-right: 0.8vw solid transparent;
+    border-top: 1vw solid #0DFF5E;
+    margin-left: 1.5vw;
+} */
