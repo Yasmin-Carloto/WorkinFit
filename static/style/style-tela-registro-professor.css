@@ -115,7 +115,7 @@ body {
     color: rgba(255, 13, 13, 1);
 }
 #back{
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     background-color: rgba(0,0,0,0.5);
@@ -205,6 +205,7 @@ body {
 
 
 #container-registros{
+    height: 60vh;
     overflow-y: auto;
     overflow-x: hidden;
 }

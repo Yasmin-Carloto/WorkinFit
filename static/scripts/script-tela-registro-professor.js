@@ -16,6 +16,25 @@ fetch('https://workinfit-api-production.up.railway.app/professor/buscar')
     lista.forEach(element => {
       criarNovosRegistros(element)
     });
+    
+$(".delete").click((registro) => {
+  mostrarConfirmação()
+  const tagRegistro = registro.target.parentElement.parentElement
+
+  $("#voltar").click(()=>{
+    esconderCofirmação()
+    $("#back").attr("style", "display: none;")
+  })
+  
+  
+  $("#deletar").off().click(() => {
+      const matricula = tagRegistro.getElementsByTagName('span')[0].innerText
+      deletarMatricula(matricula)
+      esconderCofirmação()
+      window.location.reload()
+  })
+
+})
 
     adicionarMatricula()
     
@@ -70,5 +89,26 @@ function adicionarMatricula(){
       mudarPagina(listaRegistro[i].getElementsByTagName('span')[0].innerText)
     })
   }
+ 
+
 }
 
+function mostrarConfirmação(){
+  $("#aviso_deletar").show(400, 'swing')
+  $("#aviso_deletar").attr("style", "display: flex;")
+  $("#back").attr("style", "display: block;")
+}
+
+function esconderCofirmação(){
+  $("#aviso_deletar").hide()
+}
+
+function deletarMatricula(matricula){
+  const baseUrl = "https://workinfit-api-production.up.railway.app/professor/deletar/"
+  console.log(baseUrl+matricula)
+    fetch(baseUrl+matricula, {
+      method : "DELETE"
+    })
+    .then(response => {console.log(response)})
+    
+}
