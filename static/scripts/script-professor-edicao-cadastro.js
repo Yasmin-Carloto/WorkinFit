@@ -24,7 +24,8 @@ function pegarDados(matricula){
             inserirDados(nome, email, cpf, cep, rua, bairro, complemento, senha, confirmacao)
 
         })
-
+        .catch(error => {
+            console.log(error)});
 }
 
 function inserirDados(nomeDado, emailDado, cpfDado, cepDado, ruaDado, bairroDado, complementoDado, senhaDado, confirmacaoDado){
@@ -48,7 +49,10 @@ function inserirDados(nomeDado, emailDado, cpfDado, cepDado, ruaDado, bairroDado
     bairro.value = bairroDado
     complemento.value = complementoDado
     senha.value = senhaDado
-    confirmacao.value = confirmacaoDado
+    // confirmacao.value = confirmacaoDado
+
+    console.log(senha.value)
+    // console.log(confirmacao.value)
 }
 
 function inserirMatricula(div, matricula){
@@ -60,9 +64,35 @@ window.addEventListener("load", function(){
     const matricula = pegarMatricula()
     pegarDados(matricula)
     inserirMatricula("selecao", matricula)
+
+    const formPreenchido = document.getElementById('form-container')
+    formPreenchido.addEventListener('submit', function(e){
+        e.preventDefault()
+        atualizarDados(formPreenchido)
+        window.location.href = "telaRegistro-professor.html"
+    })
 })
 
-function atualizarDados(){
-    const form = document.getElementById('form-container')
+function atualizarDados(form){  
+    const matricula = pegarMatricula()
+    const senha = document.getElementById('senha')
+    const confirmacao = document.getElementById('confirmacao')
+    console.log(form)
+
+    if(matricula && senha.value && confirmacao.value && senha.value === confirmacao.value){
+
+        const formData = new FormData(form)
+        
+        fetch(`https://workinfit-api-production.up.railway.app/professor/atualizar/${matricula}`, {
+          method: "POST",
+          body: formData, 
+        })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .then(error => console.log(error))
     
+          alert("Cadastro alterado com sucesso!")
+      }else{
+        alert("Senha e confirmação de senha precisam ser iguais.")
+      }
 }

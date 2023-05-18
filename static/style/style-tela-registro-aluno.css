@@ -58,13 +58,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 #novoCadastro h3{
     margin-top: 2vh;
-    margin-bottom: 2vh;
-    display: flex;
-    justify-content: left;
+    margin-bottom: 3vh;
     margin-right: 24vw;
     color: #0057FF;
     width: 12vw;
@@ -103,6 +102,7 @@ body {
 }
 
 #registro {
+    position: relative;
     background-color: #545353;
     width: 35vw;
     height: 15vh;
@@ -113,24 +113,23 @@ body {
     margin-bottom: 3vh;
     margin-right: 2vw;
 }
-
 #imagens {
+    position: absolute;
     display: flex;
     flex-direction: row;
-    margin-left: 15vw;
-    margin-top: 1vw;
+    margin-left: 27vw;
+    margin-top: 3vw;
 }
 
 #imagens #edit {
-    width: 4vw;
+
     height: 4vh;
-    margin-left: 1vw;
+    margin-left: 2vw;
     position: relative;
 }
 
 #imagens #delete {
-    width: 5vw;
-    height: 5vh;
+    height: 4vh;
 }
 
 .aluno {
@@ -141,6 +140,8 @@ body {
     margin-bottom: 2vw;
 }
 
+
 #container-registros{
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
