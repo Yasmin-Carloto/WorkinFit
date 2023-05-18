@@ -33,11 +33,9 @@ form.addEventListener("submit", function(e){
       body: formData, 
     })
       .then(response => response.json())
-      .then(data => console.log(data))
-      .then(error => console.log(error))
+      .then((x) => window.location.href = "telaRegistro-professor.html")
 
       alert("Cadastro realizado!")
-      window.location.href = "telaRegistro-professor.html"
   }else{
     alert("Senha e confirmação de senha precisam ser iguais.")
   }

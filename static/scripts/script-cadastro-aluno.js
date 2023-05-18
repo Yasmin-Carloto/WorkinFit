@@ -28,13 +28,12 @@ if(senha.value && confirmacao.value && senha.value === confirmacao.value){
 
   const formData = new FormData(form)
   
-  fetch('https://workinfit-api-production.up.railway.app/professor/novo', {
+  fetch('https://workinfit-api-production.up.railway.app/aluno/novo', {
     method: "POST",
     body: formData, 
   })
     .then(response => response.json())
-    .then(data => console.log(data))
-    .then(error => console.log(error))
+    .then((x) => window.location.href = "telaRegistro-aluno.html")
 
     alert("Cadastro realizado!")
 }else{

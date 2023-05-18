@@ -11,7 +11,7 @@ function pegarDados(matricula){
             const resultados = data.results
 
             const nome = resultados.nome
-            // const telefone = resultados.telefone
+            const telefone = resultados.telefone
             const email = resultados.email
             const cpf = resultados.cpf
             const cep = resultados.cep
@@ -19,16 +19,15 @@ function pegarDados(matricula){
             const bairro = resultados.bairro
             const complemento = resultados.complemento
             const senha = resultados.senha
-            const confirmacao = resultados.confirmacao
 
-            inserirDados(nome, email, cpf, cep, rua, bairro, complemento, senha, confirmacao)
+            inserirDados(nome, telefone, email, cpf, cep, rua, bairro, complemento, senha)
 
         })
         .catch(error => {
             console.log(error)});
 }
 
-function inserirDados(nomeDado, emailDado, cpfDado, cepDado, ruaDado, bairroDado, complementoDado, senhaDado, confirmacaoDado){
+function inserirDados(nomeDado, telefoneDado, emailDado, cpfDado, cepDado, ruaDado, bairroDado, complementoDado, senhaDado){
     const nome = document.getElementById('nome')
     const telefone = document.getElementById('telefone')
     const email = document.getElementById('email')
@@ -38,10 +37,9 @@ function inserirDados(nomeDado, emailDado, cpfDado, cepDado, ruaDado, bairroDado
     const bairro = document.getElementById('bairro')
     const complemento = document.getElementById('complemento')
     const senha = document.getElementById('senha')
-    const confirmacao = document.getElementById('confirmacao')
 
     nome.value = nomeDado
-    // telefone.value = telefoneDado
+    telefone.value = telefoneDado
     email.value = emailDado
     cpf.value = cpfDado
     cep.value = cepDado
@@ -49,9 +47,8 @@ function inserirDados(nomeDado, emailDado, cpfDado, cepDado, ruaDado, bairroDado
     bairro.value = bairroDado
     complemento.value = complementoDado
     senha.value = senhaDado
-    // confirmacao.value = confirmacaoDado
 
-    console.log(senha.value)
+    // console.log(senha.value)
     // console.log(confirmacao.value)
 }
 

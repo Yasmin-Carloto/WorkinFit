@@ -61,6 +61,8 @@ body {
 
 
 #selecao{
+    font-family: Montserrat-bold;
+    color: #FFFFFF;
     top: 5vh;
     width: 18vw;
     height: 5vh;
@@ -73,7 +75,6 @@ body {
     background-color: #1D1C1C;
     justify-content: center;
     align-items: center;
-
 }
 
 #form-container{
