@@ -24,7 +24,7 @@ O WorkInFit está hospedado no Github Pages neste link: [https://yasmin-carloto.
 
 1. Coloque no terminal:
 ```
-git clone https://github.com/Yasmin-Carloto/APP-TO-DO.git
+git clone https://github.com/Yasmin-Carloto/WorkinFit.git
 ```
 
 2. Abrir com o VS CODE (ou IDE de preferência)
